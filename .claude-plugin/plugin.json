@@ -1,0 +1,9 @@
+{
+  "name": "ecoinformatica-tutor",
+  "description": "Modo profesor ecoinformático para Claude Code: ciencia abierta y reproducible, código simple, aprendizaje activo con tests y buenas prácticas de git.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Albert"
+  },
+  "license": "MIT"
+}
