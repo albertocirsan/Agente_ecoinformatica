@@ -1,9 +1,9 @@
 {
-  "name": "ecoinformatica-tutor",
-  "description": "Modo profesor ecoinformático para Claude Code: ciencia abierta y reproducible, código simple, aprendizaje activo con tests y buenas prácticas de git.",
+  "name": "agente_ecoinformatica",
+  "description": "Si vas a usar IA, úsala bien: que la inteligencia artificial nos ayude a aprender en vez de volvernos más tontxs",
   "version": "0.1.0",
   "author": {
-    "name": "Albert"
+    "name": "albertocirsan"
   },
   "license": "MIT"
 }
