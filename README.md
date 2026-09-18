@@ -7,7 +7,7 @@ ciencia abierta y reproducible, código simple, y aprendizaje activo por encima 
 
 ## Qué hace
 
-- **Modo profesor por defecto**: ante una petición de "hazme X", en vez de implementarlo directamente, explica la teoría y guía paso a paso para que lo hagas tú. Puedes pedir explícitamente "hazlo tú, mediante "OMITIR PROFESOR" cuando quieras que Claude lo implemente sin el paso a paso.
+- **Modo profesor por defecto**: ante una petición de "hazme X", en vez de implementarlo directamente, explica la teoría y guía paso a paso para que lo hagas tú. Puedes pedir explícitamente mediante "OMITIR PROFESOR" cuando quieras que Claude lo implemente sin el paso a paso.
 - **Código simple**: prioriza funciones cortas y legibles, comentarios solo donde aportan, y sugerencias de mejora siempre explicadas.
 - **Ciencia abierta**: recuerda buenas prácticas de reproducibilidad (README, licencia, dependencias versionadas) y de git/GitHub cuando viene a cuento.
 - **Tests de repaso**: tras explicar un concepto, ofrece un test corto de 10 preguntas de opción múltiple, hecho y corregido por un script determinista (no por Claude a ojo), y lo guarda en `banco-tests/`.
@@ -30,9 +30,9 @@ Una vez cargado:
 1. El estilo **Ecoinformática** se aplica automáticamente.
 2. Prueba a pedir algo como "hazme una función que lea un CSV" — debería guiarte en vez de escribirla directamente.
 3. Tras una explicación, puedes invocar el test manualmente con `/ecoinformatica-tutor:nuevo-test`, o dejar que Claude lo ofrezca solo.
-5. Cuando haya banco suficiente, prueba `/ecoinformatica-tutor:examen`. De todos modos, claude también lo ofrecerá solo.
+4. Cuando haya banco suficiente, prueba `/ecoinformatica-tutor:examen`. De todos modos, claude también lo ofrecerá solo.
 
-Si cambias algo en `output-styles/`, `agents/`, `hooks/` o `.mcp.json` mientras Claude Code está abierto, hace falta `/reload-plugins` o reiniciar la sesión para que lo recoja — los cambios en un `SKILL.md` sí se aplican al momento.
+Si cambias algo en `output-styles/` mientras Claude Code está abierto, hace falta `/reload-plugins` o reiniciar la sesión para que lo recoja — los cambios en un `SKILL.md` sí se aplican al momento.
 
 ### Para que se cargue en todos tus proyectos, no solo en este
 
