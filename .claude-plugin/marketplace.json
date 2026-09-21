@@ -1,0 +1,15 @@
+{
+  "name": "acs-tools",
+  "owner": { "name": "albertocirsan" },
+  "plugins": [
+    {
+      "name": "ecoinformatica-tutor",
+      "source": "./",
+      "description": "Si vas a usar IA, úsala bien: que la inteligencia artificial nos ayude a aprender en vez de volvernos más tontxs",
+      "version": "0.1.0",
+      "author": {
+        "name": "albertocirsan"
+      }
+    }
+  ]
+}
