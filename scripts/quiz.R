@@ -116,6 +116,7 @@ modo_examen <- function() {
   ficheros <- list.files(file.path(BANCO, "temas"), pattern = "\\.json$", full.names = TRUE)
   bancos <- lapply(ficheros, cargar_tema)
   bancos <- Filter(function(b) length(b$preguntas) > 0, bancos)
+  bancos <- bancos[sample(length(bancos))]
 
   if (length(bancos) < 2) {
     cat("Todavía no hay banco suficiente (hacen falta al menos 2 temas con preguntas).\n")
