@@ -40,7 +40,7 @@ Por defecto se instala **a nivel de usuario**, así que queda activo en todos tu
 
 ## Dónde se guardan tus tests
 
-En `~/banco-tests/`, fuera del plugin y fuera de tus proyectos: son **tus** datos, en texto plano, y sobreviven a cualquier actualización o desinstalación. Puedes leerlos, editarlos o borrarlos a mano. El formato está documentado en [`docs/banco-tests.md`](docs/banco-tests.md).
+En `~/banco-tests/`, fuera del plugin y fuera de tus proyectos: son tus datos, en texto plano, y sobreviven a cualquier actualización o desinstalación. Puedes leerlos, editarlos o borrarlos a mano. El formato está documentado en [`docs/banco-tests.md`](docs/banco-tests.md).
 
 ## Desactivarlo o quitarlo
 
