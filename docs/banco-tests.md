@@ -1,5 +1,7 @@
 # Banco de tests
 
+Se crea una carpeta "~/banco-tests" en la que se guardaran las preguntas y los resultados. Esta carpeta ha de crearse fuera del repositorio para que no se borren los datos ante futuras actualizaciones. 
+
 En esta carpeta, dentro de /temas se acumulan las preguntas de opción múltiple generadas por la skill `nuevo-test`, un fichero JSON por tema. Es texto plano: se puede leer, editar o borrar preguntas a mano sin depender de ninguna herramienta.
 
 La mecánica de hacer el test/examen (preguntar, corregir, guardar el resultado) la ejecuta el script `scripts/quiz.R`.
@@ -41,9 +43,11 @@ Solo la fecha y los temas del último examen general, para saber cuánto banco n
 
 ## `scripts/quiz.R`
 
+(La ruta a la carpeta del plugin la da la skill)
+
 ```bash
-Rscript banco-tests/scripts/quiz.R test banco-tests/temas/<tema>.json   # un tema
-Rscript banco-tests/scripts/quiz.R examen                                # mezcla varios temas
+Rscript <carpeta-del-plugin>/scripts/quiz.R test ~/banco-tests/temas/<tema>.json   # un tema
+Rscript <carpeta-del-plugin>/scripts/quiz.R examen                                # mezcla varios temas
 ```
 
-Depende de dos paquetes de R: [`jsonlite`](https://cran.r-project.org/package=jsonlite) para leer/escribir JSON, y [`here`](https://cran.r-project.org/package=here) para que las rutas funcionen sin importar desde qué carpeta se ejecute el script. Instálalos una vez con `install.packages(c("jsonlite", "here"))`. El proyecto lleva un archivo `.here` vacío en la raíz para anclar dónde está el proyecto" de forma inequívoca.
+Depende de un paquete de R: [`jsonlite`](https://cran.r-project.org/package=jsonlite) para leer/escribir JSON. Instálalo una vez con `install.packages("jsonlite")`.

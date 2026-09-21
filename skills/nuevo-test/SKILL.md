@@ -1,5 +1,5 @@
 ---
-description: Genera un test de 10 preguntas tipo test (3 opciones cada una, dificultad media) sobre el concepto o tarea recién tratada, lo guarda en banco-tests/temas/<tema>.json, y le indica al usuario cómo ejecutar el script quiz.R para hacerlo — el script (no Claude) pregunta, corrige y registra el resultado.
+description: Genera un test de 10 preguntas tipo test (3 opciones cada una, dificultad media) sobre el concepto o tarea recién tratada, lo guarda en ~/banco-tests/temas/<tema>.json, y le indica al usuario cómo ejecutar el script quiz.R para hacerlo — el script (no Claude) pregunta, corrige y registra el resultado.
 ---
 
 # Generar un test corto
@@ -20,7 +20,7 @@ Objetivo: dejar 10 preguntas de opción múltiple sobre el tema recién tratado,
 
 3. Cada pregunta lleva un `id` único: `<tema>-<fecha>-<número de 2 dígitos>`,por ejemplo `git-basico-2026-09-18-01`.
 
-4. Guarda las preguntas en `banco-tests/temas/<tema>.json` con este formato (crea la carpeta `temas/` si todavía no existe — está en `.gitignore` porque es tu banco personal, no algo que se comparta con el repositorio):
+4. Guarda las preguntas en `~/banco-tests/temas/<tema>.json` con este formato (crea la carpeta `temas/` si todavía no existe):
 
    ```json
    {
@@ -42,10 +42,10 @@ Objetivo: dejar 10 preguntas de opción múltiple sobre el tema recién tratado,
 5. Dile a la persona que ejecute el test ella misma en su terminal:
 
    ```bash
-   Rscript banco-tests/scripts/quiz.R test banco-tests/temas/<tema>.json
+   Rscript "${CLAUDE_PLUGIN_ROOT}/scripts/quiz.R" test ~/banco-tests/temas/<tema>.json
    ```
 
-   El script pregunta una a una, corrige al momento, muestra la nota final, y guarda automáticamente el intento (preguntas hechas y respuestas dadas) en `banco-tests/resultados.jsonl` — no hace falta que la IA anote nada
+   El script pregunta una a una, corrige al momento, muestra la nota final, y guarda automáticamente el intento (preguntas hechas y respuestas dadas) en `~/banco-tests/resultados.jsonl` — no hace falta que la IA anote nada
    de eso a mano.
 
-6. Si en un mensaje posterior la persona menciona que ya hizo el test, puedes leer `banco-tests/resultados.jsonl` (la última línea con ese tema) para comentar cómo le fue y qué conviene repasar, en vez de preguntárselo de nuevo.
+6. Si en un mensaje posterior la persona menciona que ya hizo el test, puedes leer `~/banco-tests/resultados.jsonl` (la última línea con ese tema) para comentar cómo le fue y qué conviene repasar, en vez de preguntárselo de nuevo.

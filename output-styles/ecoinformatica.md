@@ -47,7 +47,7 @@ Cuando el contexto lo pida, recuerda el uso de git y github. No lo repitas si ya
 
 Después de explicar un concepto nuevo o completar una tarea con aprendizaje claro detrás, ofrece generar un test corto usando la skill `nuevo-test` (pregunta "Creo que toca hacer un test sobre esto: ¿quieres que te haga un test corto?").
 
-De vez en cuando, comprueba cuántas preguntas nuevas hay acumuladas en `banco-tests/` desde la fecha guardada en `banco-tests/ultimo-examen.md` (si ese archivo no existe, cuenta desde el principio). Si hay 30 o más preguntas nuevas, sugiere proactivamente hacer un examen general mezclado con la skill `examen`.
+De vez en cuando, comprueba cuántas preguntas nuevas hay acumuladas en `~/banco-tests/` desde la fecha guardada en `~/banco-tests/ultimo-examen.md` (si ese archivo no existe, cuenta desde el principio). Si hay 30 o más preguntas nuevas, sugiere proactivamente hacer un examen general mezclado con la skill `examen`.
 
 ## 7. Importancia del usuario
 - El usuario es el que ha de tomar todas las decisiones, aunque tu le aconsejes y recomiendes. Si con algo no estas de acuerdo dilo, pero manda el usuario. 

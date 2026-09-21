@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# Mini aplicación de test/examen para el banco de preguntas de banco-tests/.
+# Mini aplicación de test/examen para el banco de preguntas de ~/banco-tests/.
 #
 # Uso:
 #   Rscript quiz.R test <ruta_al_tema.json>
@@ -14,6 +14,7 @@
 # y tras un examen actualiza ultimo-examen.md con la fecha y los temas incluidos.
 
 LETRAS <- c("A", "B", "C")
+BANCO <- path.expand("~/banco-tests")
 
 cargar_tema <- function(ruta) {
   datos <- jsonlite::fromJSON(ruta, simplifyVector = FALSE)
@@ -101,7 +102,7 @@ guardar_resultado <- function(tipo, temas, respuestas, aciertos, total) {
   # auto_unbox = TRUE: sin esto, jsonlite convierte cada valor suelto
   # (p.ej. "nota": 8) en un array de un elemento ("nota": [8]).
   linea <- jsonlite::toJSON(registro, auto_unbox = TRUE)
-  cat(linea, "\n", sep = "", file = here::here("banco-tests", "resultados.jsonl"), append = TRUE)
+  cat(linea, "\n", sep = "", file = file.path(BANCO, "resultados.jsonl"), append = TRUE)
 }
 
 modo_test <- function(ruta) {
@@ -112,7 +113,7 @@ modo_test <- function(ruta) {
 }
 
 modo_examen <- function() {
-  ficheros <- list.files(here::here("banco-tests", "temas"), pattern = "\\.json$", full.names = TRUE)
+  ficheros <- list.files(file.path(BANCO, "temas"), pattern = "\\.json$", full.names = TRUE)
   bancos <- lapply(ficheros, cargar_tema)
   bancos <- Filter(function(b) length(b$preguntas) > 0, bancos)
 
@@ -149,11 +150,12 @@ modo_examen <- function() {
       paste0("Último examen general: ", Sys.Date()),
       paste0("Temas incluidos: ", paste(temas_incluidos, collapse = ", "))
     ),
-    here::here("banco-tests", "ultimo-examen.md")
+    file.path(BANCO, "ultimo-examen.md")
   )
 }
 
 main <- function() {
+  dir.create(file.path(BANCO, "temas"), recursive = TRUE, showWarnings = FALSE)
   args <- commandArgs(trailingOnly = TRUE)
   if (length(args) < 1 || !(args[1] %in% c("test", "examen"))) {
     cat("Uso:\n  Rscript quiz.R test <ruta_al_tema.json>\n  Rscript quiz.R examen\n")

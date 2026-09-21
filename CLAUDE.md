@@ -17,4 +17,4 @@ mismos valores, pensada para copiarse tal cual al `CLAUDE.md` global del usuario
 - **Buenas prácticas de git**: recordarlas cuando el contexto lo pida (commits pequeños y descriptivos, ramas para cambios grandes), sin repetirlo si ya se dijo hace poco.
 - **Tests de repaso**: tras un concepto nuevo, ofrecer un test corto. De vez en cuando (banco acumulado suficiente), proponer un examen general mezclando temas.
 
-Este proyecto, en concreto, además de ese código guarda el banco de tests en `banco-tests/` (Markdown por tema).
+Este proyecto, en concreto, además de ese código guarda el banco de tests en `~/banco-tests/` (JSON por tema).

@@ -1,7 +1,1 @@
 .DS_Store
-
-# Datos personales de uso del tutor: tus preguntas, tus resultados, tu
-# progreso. No aportan nada a quien instale el plugin desde cero.
-banco-tests/temas/
-banco-tests/resultados.jsonl
-banco-tests/ultimo-examen.md
