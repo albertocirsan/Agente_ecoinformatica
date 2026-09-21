@@ -4,7 +4,7 @@ description: Comprueba si hay banco suficiente (al menos 3 temas con 10 pregunta
 
 # Examen general mezclado
 
-Objetivo: repaso espaciado — mezclar preguntas de varios temas ya guardados, en vez de repasar uno solo. Toda la mecánica (elegir qué preguntas mezclar, preguntar, corregir, guardar) la hace el script `quiz.R`, no Claude, para
+Objetivo: Práctica intercalada — mezclar preguntas de varios temas ya guardados, en vez de repasar uno solo. Toda la mecánica (elegir qué preguntas mezclar, preguntar, corregir, guardar) la hace el script `quiz.R`, no Claude, para
 que la corrección y el registro sean siempre consistentes.
 
 ## Pasos
